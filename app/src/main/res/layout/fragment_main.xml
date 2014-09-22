@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,46 +8,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity$PlaceholderFragment">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
 
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview_forecast">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="84"
-        android:id="@+id/list_item_forcast_textView"
-        android:layout_below="@+id/textClock"
-        android:layout_toLeftOf="@+id/textClock"
-        android:layout_toStartOf="@+id/textClock"
-        android:layout_marginTop="61dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignTop="@+id/list_item_forcast_textView"
-        android:layout_toRightOf="@+id/textClock"
-        android:layout_toEndOf="@+id/textClock" />
+        </ListView>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView"
-        android:src="@drawable/ic_launcher"
-        android:layout_below="@+id/list_item_forcast_textView"
-        android:layout_toRightOf="@+id/imageView" />
-
-</RelativeLayout>
+</FrameLayout>
