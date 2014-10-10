@@ -1,23 +1,9 @@
 package com.example.alex.sunshine;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 
 public class MainActivity extends Activity {
 
@@ -27,7 +13,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new ForecastFragment())
                     .commit();
         }
     }
@@ -55,35 +41,5 @@ public class MainActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            String[] forecastArray = {
-                    "Today - Sunny - 88/63",
-                    "Tomorrow - Foggy - 70/46",
-                    "Wednesday - Cloudy -72/63",
-                    "Thursday - Rainy - 64-51",
-                    "Friday - Foggy - 70/46",
-                    "Saturday - Sunny - 76/68"
-            };
-            List<String> weekForecast = new ArrayList<String>(Arrays.asList(forecastArray));
-            ArrayAdapter<String> mForecastAdapter;
-            mForecastAdapter = new ArrayAdapter<String>(
-                    getActivity(),
-                    R.layout.list_item_forecast,
-                    R.id.list_item_forcast_textView, weekForecast
-            );
-            ListView forecastView = (ListView) rootView.findViewById(R.id.listview_forecast);
-            forecastView.setAdapter(mForecastAdapter);
-
-
-            return rootView;
-        }
-    }
 }
